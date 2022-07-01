@@ -122,6 +122,7 @@ impl<'a> Source for Mysql<'a> {
             "--single-transaction", // https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_single-transaction
             "--quick", // reads out large tables in a way that doesn't require having enough RAM to fit the full table in memory
             "--hex-blob",
+            "--skip-triggers", // triggers not supported by mysql parser
             self.database,
         ];
 
